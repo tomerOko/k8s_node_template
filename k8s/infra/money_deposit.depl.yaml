@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: money-deposit.service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: money_deposit.service
+  template:
+    metadata:
+      labels:
+        app: money_deposit.service # will be selected by that name
+    spec:
+      containers:
+      - name: money_deposit.container
+        image: money_deposit.image
+        imagePullPolicy: Never # will only use local images
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000

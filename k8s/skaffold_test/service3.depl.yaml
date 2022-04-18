@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service3.deployment # the name of this resource (deployment is also a resource)
+spec:
+  selector: # how to select the pods
+    matchLabels:
+      app: service3.service # add to the matadata of every pod the lable ["app" = "service3.service"]
+  template: # how to build the pods
+    metadata:
+      labels:
+        app: service3.service # know that pods with the lable ["app" = "service3.service"] is belongs to this deployment
+    spec: 
+      containers:
+      - name: service3-container # the name of the container inside the pod
+        image: service3.image # build the container from this image
+        # resources:
+        #   requests:
+        #     memory: "32Mi"
+        #     cpu: "100m"
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        ports:
+        - containerPort: 4000

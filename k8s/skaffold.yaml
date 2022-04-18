@@ -1,0 +1,44 @@
+apiVersion: skaffold/v2beta27
+kind: Config
+deploy: # run all yaml files listed below. and delete the resources  *A*
+  kubectl:
+    manifests:
+      - ./skaffold_test/*
+build: # on first lunc
+  local:
+    push: false
+  artifacts:
+    - image: service1.image
+      context: ../service1 # *B 1/2* - rebuild
+      docker: # *C*
+        dockerfile: Dockerfile
+      sync: # *B 1/2* - sync
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+    - image: service2.image
+      context: ../service2
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+    - image: service3.image
+      context: ../service3
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+
+
+# skaffold:
+# need to a. lunch and shut down.   b. listen on changes and sync or rebuild+restart  c. build the images in case they dosent exist
+# 1. build the images
+# 2. run the deployments
+# 2.1. the deployments create node's with pods. inside each pod it create a runing instance of the image
+
+
+
