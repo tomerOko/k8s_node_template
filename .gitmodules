@@ -1,6 +1,6 @@
 [submodule "packages/npm_package_template"]
 	path = packages/npm_package_template
-	url = git@github.com:tomerOko/k8s_node_template.service_template.git
+	url = git@github.com:tomerOko/k8s_node_template.npm_package_template.git
 	branch = master
 [submodule "single_service_template"]
 	path = services/service_template
