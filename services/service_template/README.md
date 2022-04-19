@@ -67,7 +67,7 @@ probably wont be two hurd to
 ## comments
 
 ### *(*1)*
-sudo permissions are needed for 2 resons  
+sudo permissions are needed for 2 reasons  
     1. to change files while creating images  
     2. if u running WSL the OS that run's the code editor is WINDOWS but the files are stored on the LINUX file system. so windows need permmmisions to change the file's  
     \* if u running on mac/linux try to remove the sudo from the scripts it might work
