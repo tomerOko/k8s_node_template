@@ -1,6 +1,7 @@
-[submodule "packages/npm_package_templ"]
-	path = packages/npm_package_templ
+[submodule "packages/npm_package_template"]
+	path = packages/npm_package_template
 	url = git@github.com:tomerOko/chatmate.common.example.git
+	branch = master
 [submodule "single_service_template"]
 	path = services/service_template
 	url = https://github.com/tomerOko/k8s_node_template.service_template.git
