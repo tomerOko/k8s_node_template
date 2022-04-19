@@ -1,0 +1,3 @@
+[submodule "packages/npm_package_templ"]
+	path = packages/npm_package_templ
+	url = git@github.com:tomerOko/chatmate.common.example.git
