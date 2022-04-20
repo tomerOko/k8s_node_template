@@ -13,3 +13,6 @@
 	path = ts_startkit
 	url = https://github.com/tomerOko/ts_startkit.git
 
+[submodule "client_template"]
+	path = client_template
+	url = git@github.com:tomerOko/k8s_node_template.client_template.git
