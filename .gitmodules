@@ -6,12 +6,6 @@
 	path = packages/npm_package_template
 	url = git@github.com:tomerOko/k8s_node_template.npm_package_template.git
 	branch = master
-[submodule "test_environment"]
-	path = test_environment
-	url = https://github.com/tomerOko/test_environment.git
-[submodule "ts_startkit"]
-	path = ts_startkit
-	url = https://github.com/tomerOko/ts_startkit.git
 [submodule "client_template"]
 	path = client/client_template
 	url = git@github.com:tomerOko/k8s_node_template.client_template.git
