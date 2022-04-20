@@ -1,3 +1,5 @@
-all that shit with the scripts
-make sure the docker files and the run commands are correct (run dev sepposed to do the main event,
-if the developer wanna run commands on the container, just do the main event anyway and exec into that shit) 
+* all that shit with the scripts
+* what the fuck with the docker files
+* make sure the docker files and the run commands are correct (run dev sepposed to do the main event,
+if the developer wanna run commands on the container, just do the main event anyway and exec into that shit) \
+* change to alpine
