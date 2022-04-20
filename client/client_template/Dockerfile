@@ -12,6 +12,6 @@ WORKDIR /app
 
 # set the default main command of the container to run 'nodemon src/index.ts'
 ENTRYPOINT ["/bin/bash" , "-c" ]
-CMD ["npm i && nodemon src/index.ts" ]
+CMD ["bash" ]
 
 #  see run.sh in order to run build and run
