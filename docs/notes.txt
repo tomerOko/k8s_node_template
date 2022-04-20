@@ -1,0 +1,4 @@
+known issues: 
+* i down know how to switch builds in k8s yet. so currntly all the microservice will build and
+run the .ts files with nodemon, instead of building properly and copy the code from a 'dist'
+ or an 'out'.
