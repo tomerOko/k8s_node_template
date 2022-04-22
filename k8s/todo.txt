@@ -1,0 +1,9 @@
+* what is the right way to manage ingress installation (not the files,
+ the ingress itself, how does it work when moving to production)
+
+
+deployments
+-----------
+* in a deployment: can I specify a docker file to build from instead of an image (that was already built manually)
+* there is somthing about deployment being also a load-balancer by defulat?
+* how dose deployments know how many instances to run? (in case 'replicas' property is not provided)

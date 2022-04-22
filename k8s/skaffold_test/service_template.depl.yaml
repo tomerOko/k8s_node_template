@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: service-template.deployment # name of the deploymebt object
+spec:
+  replicas: 1 # how many instances of 
+  selector:
+    matchLabels: # these how the deployment knows if a pod is under its responsability or not
+      app: service-template.pod # 'app' is just a standard name, could be any name
+  template: # these are the properties of 'how to build the pods'
+    metadata:
+      labels:
+        app: service-template.pod
+    spec:
+      containers:
+      - name: service-template-k8s-dev-container # the name of the container inside the pod # lower case alphanumeric characters or '-'
+        image: service-template-k8s-dev.image # build the container from this image
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "200m"
+          limits:
+            memory: "504Mi"
+            cpu: "1000m"
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-template-srv
+spec:
+  selector:
+    app: service-template.pod
+  type: ClusterIP
+  ports:
+    - name: event-bus
+      protocol: TCP
+      port: 4005
+      targetPort: 4005

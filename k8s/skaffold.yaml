@@ -1,4 +1,4 @@
-apiVersion: skaffold/v2beta27
+apiVersion: skaffold/v2beta22
 kind: Config
 deploy: # run all yaml files listed below. and delete the resources  *A*
   kubectl:
@@ -8,30 +8,15 @@ build: # on first lunc
   local:
     push: false
   artifacts:
-    - image: service1.image
-      context: ../service1 # *B 1/2* - rebuild
+    - image: service-template-k8s-dev.image
+      context: ../services/service_template # *B 1/2* - rebuild
       docker: # *C*
-        dockerfile: Dockerfile
+        dockerfile: Dockerfile.dev
       sync: # *B 1/2* - sync
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: service2.image
-      context: ../service2
-      docker:
-        dockerfile: Dockerfile
-      sync:
-        manual:
-          - src: "src/**/*.ts"
-            dest: .
-    - image: service3.image
-      context: ../service3
-      docker:
-        dockerfile: Dockerfile
-      sync:
-        manual:
-          - src: "src/**/*.ts"
-            dest: .
+
 
 
 # skaffold:
