@@ -36,5 +36,5 @@ spec:
   ports:
     - name: event-bus
       protocol: TCP
-      port: 4005
-      targetPort: 4005
+      port: 4005 # incoming port, the port to get traffic to, probably comes from the cluster ingress/gateway
+      targetPort: 4005 # the port to send the traffic through into the container(pod)

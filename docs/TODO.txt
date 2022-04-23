@@ -1,0 +1,12 @@
+* create a proper express server.
+
+* make sure every submodule have a git ignore of the same stracture
+
+* submodule's README.md files 
+    1. make sure there is one
+    2. update it
+    3. maybe standart structure for all submodules
+
+
+* documentation
+    1. maybe standart structure for all submodules
