@@ -1,0 +1,21 @@
+cluster level stuff
+-------------------
+* what is the right way to manage ingress installation (not the files,
+ the ingress itself, how does it work when moving to production)
+    - there will allways be an 'cluster initialization' procces made manually or by CD (continius delivery) program,
+    importing the kubernets.ingress-nginx.yaml file, and 'kubectl' apply it will be a stage in that CD procces 
+
+
+deployments
+-----------
+* in a deployment: can I specify a docker file to build from instead of an image (that was already built manually)
+    - skaffold / jenkins dose that for u
+
+* there is somthing about deployment being also a load-balancer by defulat
+    - yes. it just is, natively the deployment split and balance the load between it's replicas
+
+* how dose deployments know how many instances to run? (in case 'replicas' property is not provided)
+    - there is a thing with resources, that u specifiy a minimal resources (to give an instance from the beginning), 
+    and a maximal resources that if an instance is asking for more, the deplotment shuld run another instance
+    - and there is lika a scale 'strategies' for that, in the yaml one can provice a set of rules for the deplotment
+    to scale by

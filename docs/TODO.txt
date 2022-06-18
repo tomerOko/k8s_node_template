@@ -1,0 +1,26 @@
+tasks:
+------
+* create a proper express server.
+
+* make sure every submodule have a git ignore of the same stracture
+
+* submodule's README.md files 
+    1. make sure there is one
+    2. update it
+    3. maybe standart structure for all submodules
+
+* course
+    1. just do it
+    2. implementing NATS jetstrem
+    3. persistant data in k8s
+
+* implement also KAFKA (not just NATS) so that i will learn and the user of the template will be abel to choose
+
+* documentation
+    1. maybe standart structure for all submodules
+
+
+
+open questions:
+---------------
+    * 
