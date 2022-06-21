@@ -20,6 +20,7 @@ images:
     image: ${temaplateA} 
     dockerfile: ./services/service_template/Dockerfile.dev
     context: services/service_template/
+    # entrypoint: ["bash"]  
     build: 
       docker:
         preferMinikube: false              
