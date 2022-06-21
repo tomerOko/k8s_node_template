@@ -7,5 +7,5 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 # kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.2.0/deploy/static/provider/cloud/deploy.yaml
 
 # installing npm packages for all serivces
-cd ../services/service_template/scripts
-bash initialize_cluster.sh 
+cd ../services/service_template/scripts/run_locally
+bash npm\ install.sh 
