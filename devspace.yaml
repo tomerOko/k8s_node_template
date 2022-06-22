@@ -20,15 +20,18 @@ images:
     image: ${temaplateA} 
     dockerfile: ./services/service_template/Dockerfile.dev
     context: services/service_template/
-    # entrypoint: ["bash"]  
+    # entrypoint: ["tail", "-f", "/dev/null"]
     build: 
       docker:
         preferMinikube: false              
         skipPush: true  
+        # args:                            
+        # - --no-cache
   image2:
     image: ${temaplateB} 
     dockerfile: ./services/service_template/Dockerfile.dev
     context: services/service_template/
+    # entrypoint: ["tail", "-f", "/dev/null"]
     build: 
       docker:
         preferMinikube: false              
