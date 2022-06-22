@@ -1,29 +1,28 @@
 apiVersion: skaffold/v2beta22
 kind: Config
-deploy: # run all yaml files listed below. and delete the resources  *A*
+deploy: # start and stops k8s objects (such as deploymebts and services)
   kubectl:
     manifests:
       - ./skaffold_test/*
-build: # on first lunc
+build: # build and sync images
   local:
     push: false
   artifacts:
     - image: service-template-k8s-dev.image
-      context: ../services/service_template # *B 1/2* - rebuild
-      docker: # *C*
+      context: ../services/service_template 
+      docker:
         dockerfile: Dockerfile.dev
-      sync: # *B 1/2* - sync
+      sync:
         manual:
           - src: "src/**/*.ts"
             dest: .
 
 
 
-# skaffold:
-# need to a. lunch and shut down.   b. listen on changes and sync or rebuild+restart  c. build the images in case they dosent exist
-# 1. build the images
-# 2. run the deployments
-# 2.1. the deployments create node's with pods. inside each pod it create a runing instance of the image
+# skaffold supposed to:
+# a. lunch and shut down the deployments, services, and the rest of k8s objects.   
+# b. build the images in case it dont exist
+# c. listen on file changes and sync injecting or rebuild and restart
 
 
 
