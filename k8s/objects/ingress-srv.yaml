@@ -1,0 +1,40 @@
+# https://kubernetes.github.io/ingress-nginx/user-guide/basic-usage/
+# dont forget to edit 'hosts' file for local run or install external load balancer in cloud run
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-app-template
+spec:
+  rules:
+  - host: app-template.com  # ingress distributes the incomming networking traffic by the 'host name' header (that how it is in http TCP/IP i dont know about other TCP based protocols or UDP)
+    http:
+      paths: # an array represinting each one of the rellevant culsterIP services
+      - path: /servie_template # first path section of the URL
+        pathType: Prefix
+        backend: # where to send the reaffic
+          service:
+            name: service-template-srv
+            port:
+              number: 4005 # the port wich the cluster ip listening on
+  ingressClassName: nginx # that how the ingress-nginx that installed on the cluster know that this file is a config file for it to use
+
+
+# # in case of more then one app/site on same the cluster
+# ---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: ingress-myserviceb
+# spec:
+#   rules:
+#   - host: myserviceb.foo.org
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: myserviceb
+#             port:
+#               number: 80
+#   ingressClassName: nginx
