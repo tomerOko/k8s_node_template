@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: service-template2-k8s-dev-container # the name of the container inside the pod # lower case alphanumeric characters or '-'
-        image: service-template2-k8s-dev.image # build the container from this image
+        image: gcr.io/chatmate-354718/service_template # build the container from this image
         # resources:
         #   requests:
         #     memory: "64Mi"

@@ -1,14 +1,16 @@
-apiVersion: skaffold/v2beta22
+apiVersion: skaffold/v2beta28
 kind: Config
 deploy: # start and stops k8s objects (such as deploymebts and services)
   kubectl:
     manifests:
-      - ./skaffold_test/*
+      - ./objects/*
 build: # build and sync images
-  local:
-    push: false
+  # local:
+  #   push: false
+  googleCloudBuild:
+    projectId: chatmate-354718
   artifacts:
-    - image: service-template-k8s-dev.image
+    - image: gcr.io/chatmate-354718/service_template
       context: ../services/service_template 
       docker:
         dockerfile: Dockerfile.dev

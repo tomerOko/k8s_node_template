@@ -15,13 +15,13 @@ spec:
       containers:
       - name: service-template-k8s-dev-container # the name of the container inside the pod # lower case alphanumeric characters or '-'
         image: gcr.io/chatmate-354718/service_template # build the container from this image
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "200m"
-          limits:
-            memory: "504Mi"
-            cpu: "1000m"
+        # resources:
+        #   requests:
+        #     memory: "64Mi"
+        #     cpu: "200m"
+        #   limits:
+        #     memory: "504Mi"
+        #     cpu: "1000m"
         ports:
         - containerPort: 3000
 ---
